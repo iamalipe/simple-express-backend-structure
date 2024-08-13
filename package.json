@@ -1,0 +1,36 @@
+{
+  "name": "simple-express-backend-structure",
+  "author": {
+    "name": "Abhiseck Bhattacharya",
+    "email": "Abhiseck@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamalipe/simple-express-backend-structure.git"
+  },
+  "description": "A Simple Express Backend Structure Template",
+  "homepage": "https://github.com/iamalipe/simple-express-backend-structure",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon main.ts",
+    "build": "tsc",
+    "start": "node ./dist/main.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.2.0",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
