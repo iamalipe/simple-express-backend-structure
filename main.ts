@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import cors from "cors";
+import { mainRouter } from "./routes";
 
 const EXPRESS_PORT = process.env.PORT || 3000;
 
@@ -26,6 +27,8 @@ app.get("/", async (req, res) => {
 app.get("/ping", async (req, res) => {
   res.send("pong!");
 });
+
+app.use("/api/v1", mainRouter);
 
 app.listen(EXPRESS_PORT, () => {
   console.log(`🟢 App is running on port ${EXPRESS_PORT}.`);
