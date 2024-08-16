@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../db/db";
+import geoip from "geoip-lite";
 
 export const createUser = async (req: Request, res: Response) => {
   console.log("createUser", req.body);
@@ -22,7 +23,7 @@ export const deleteUser = async () => {};
 export const getUser = async (req: Request, res: Response) => {
   const data = await db.user.findMany();
 
-  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-
-  res.json({ data: data, ip1: ip, ip: req?.ip, ips: req?.ips });
+  const ip = req?.ip || "";
+  const geo = geoip.lookup(ip);
+  res.json({ data: data, geo });
 };
