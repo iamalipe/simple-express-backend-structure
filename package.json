@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "nodemon main.ts",
     "build": "tsc",
-    "start": "node ./dist/main.js"
+    "start": "node ./dist/main.js",
+    "build:pre": "npx prisma generate && npx prisma db push"
   },
   "license": "ISC",
   "dependencies": {
